@@ -11,4 +11,4 @@ awk -F',' '
 		print "Koordinat pusat:"
 		print y_mid, ",", x_mid
 	}
-' titik-penting.txt > posisipusaka.txt
+' titik-penting.txt | tee posisipusaka.txt

@@ -47,28 +47,18 @@ NR > 1 {
 END {
 	if(opsi == "a") {
 		print("Jumlah seluruh penumpang KANJ adalah", count_passenger, "orang.")
-	}
-
-	if(opsi == "b"){
+	}	else if (opsi == "b"){
 		total_carriage = 0
 		for(g in list_carriage){
 			total_carriage++
 		}
-
 		print("Jumlah gerbong penumpang KANJ adalah", total_carriage)
-	}
-
-	if(opsi == "c"){
+	} else if (opsi == "c"){
 		print(oldest_name, "adalah penumpang kereta tertua dengan usia", oldest, "tahun.")
-	}
-
-	if(opsi == "d"){
+	}	else if (opsi == "d"){
 		average = total_age / count_passenger
-
 		printf("Rata-rata usia penumpang adalah %.0f tahun\n", average)
-	}
-
-	if(opsi == "e"){
+	}	else if (opsi == "e"){
 		print("Jumlah penumpang business class adalah", total_business, "orang")
 	}
 }

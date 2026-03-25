@@ -118,9 +118,17 @@ do
                 echo -n "Masukkan Status Awal (Aktif/Menunggak): "
                 read -r status
 
-                if [[ "$status" == "Aktif" || "$status" == "Menunggak" ]]; then
+                status_lowcase="${status,,}"
+
+                if [[ "$status_lowcase" == "aktif" || "$status_lowcase" == "menunggak" ]]; then
+                    if [[ "$status_lowcase" == "aktif" ]]; then
+                        status="Aktif"
+                    else 
+                        status="Menunggak"
+                    fi
+
                     break
-                else
+                else 
                     echo "[-] Error: Status harus diisi \"Aktif\" atau \"Menunggak\"."
                 fi
             done
@@ -129,9 +137,10 @@ do
 
             echo -e "\n[√] Penghuni \"$nama\" berhasil ditambahkan ke Kamar $kamar dengan status $status.\n"
 
-            read -p "Tekan [ENTER] untuk kembalik ke menu..."
+            read -r -p "Tekan [ENTER] untuk kembalik ke menu..."
             ;;
         "2")
+            clear
             echo "=========================================================="
             echo "                      HAPUS PENGHUNI                      "
             echo "=========================================================="
@@ -154,7 +163,7 @@ do
                 echo -e "\n[-] Error: Data penghuni \"$nama_hapus\" tidak ditemukan di sistem.\n"
             fi
 
-            read -p "Tekan [ENTER] untuk kembali ke menu..."
+            read -r -p "Tekan [ENTER] untuk kembali ke menu..."
             ;;
         "3")
             clear
@@ -199,7 +208,7 @@ do
             fi
 
             echo ""
-            read -p "Tekan [ENTER] untuk kembali ke menu..."
+            read -r -p "Tekan [ENTER] untuk kembali ke menu..."
             ;;
         "4")
             clear
@@ -214,7 +223,7 @@ do
             if [ "$cek_nama" == "1" ]; then
                 while true; do
                     echo -n "Masukkan Status Baru(Akitf/Menunggak): "
-                    read input_status
+                    read -r input_status
 
                     status_lower=$(echo "$input_status" | tr '[:upper:]' '[:lower:]')
 
@@ -243,7 +252,7 @@ do
                 echo -e "\n[-] Error: Data penghuni \"$nama_update\" tidak ditemukan di sistem.\n"
             fi
 
-            read -p "Tekan [ENTER] untuk kembali ke menu..."
+            read -r -p "Tekan [ENTER] untuk kembali ke menu..."
             ;;
         "5")
             clear
@@ -320,7 +329,7 @@ do
 
             echo -e "\n[√] Laporan berhasil disimpan ke $LAPORAN_FILE\n"
             
-            read -p "Tekan [ENTER] untuk kembali ke menu..."
+            read -r -p "Tekan [ENTER] untuk kembali ke menu..."
 
             ;;
         "6")
@@ -338,7 +347,7 @@ do
                 echo " 4. Kembali"
                 echo "=================================================="
                 echo -n "Pilih [1-4]: "
-                read cron_opt
+                read -r cron_opt
 
                 case "$cron_opt" in
                     1)
@@ -346,14 +355,14 @@ do
                         crontab -l 2>/dev/null | grep "$CRON_CMD" || echo "Tidak ada cron job aktif."
                         
                         echo ""
-                        read -p "Tekan [ENTER] untuk kembali..."
+                        read -r -p "Tekan [ENTER] untuk kembali..."
                         ;;
                     2)
                         echo ""
                         echo -n "Masukkan Jam (0-23): "
-                        read jam
+                        read -r jam
                         echo -n "Masukkan Menit (0-59): "
-                        read menit
+                        read -r menit
 
                         if [[ "$jam" =~ ^[0-9]+$ ]] && [ "$jam" -ge 0 ] && [ "$jam" -le 23 ] && \
                            [[ "$menit" =~ ^[0-9]+$ ]] && [ "$menit" -ge 0 ] && [ "$menit" -le 59 ]; then
@@ -366,13 +375,13 @@ do
                         fi
                         
                         echo ""
-                        read -p "Tekan [ENTER] untuk kembali..."
+                        read -r -p "Tekan [ENTER] untuk kembali..."
                         ;;
                     3)
                         crontab -l 2>/dev/null | grep -v "$CRON_CMD" | crontab -
                         
                         echo -e "\n[√] Cron job pengingat tagihan berhasil dihapus.\n"
-                        read -p "Tekan [ENTER] untuk kembali..."
+                        read -r -p "Tekan [ENTER] untuk kembali..."
                         ;;
                     4)
                         break
