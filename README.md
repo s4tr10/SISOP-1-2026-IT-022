@@ -1,6 +1,7 @@
 # SISOP-1-2026-IT-022
 #### Muhammad Satrio Utomo | 50272521022
 ## Repository Structure
+
 ![Struktur Repository](assets/soal%201/repo-structure.png)
 
 ## Reporting
@@ -248,6 +249,7 @@ do
 done
 ```
 Contoh output dari tampilan awal :
+
 ![Tampilan Awal Kost Slebew](assets/soal%203/image-1.png)
 
 ---
@@ -363,18 +365,23 @@ Tampilan jika semua input valid dan berhasil masuk ke dalam database :
 ![Berhasil ditambahkan](assets/soal%203/image-3.png)
 
 Output jika nomor kamar sudah terdaftar dalam database :
+
 ![Nomor kamar sudah ada](assets/soal%203/image-4.png)
 
 Output jika harga sewa tidak berupa angka atau harga sewa negatif :
+
 ![Harga sewa tidak valid](assets/soal%203/image-5.png)
 
 Output jika penulisan format tanggal salah, tanggal tidak valid (tidak ada dalam kalender), dan apabila penanggalan melebihi tanggal hari ini :
+
 ![Format tanggal salah](assets/soal%203/image-6.png)
 
 Output jiks terdapat typo pada penulisan status :
+
 ![Typo Status](assets/soal%203/image-7.png)
 
 Contoh isi file ```DB_FILES``` :
+
 ![Isi file penghuni.csv](assets/soal%203/image-8.png)
 
 ---
@@ -555,15 +562,19 @@ echo -e "\n[√] Status $nama_update berhasil diubah menjadi: $status_baru\n"
 Contoh Output :
 
 Output jika nama tidak ditemukan dalam database penghuni.
+
 ![Nama tidak ditemukan](assets/soal%203/image-13.png)
 
 Jika ditemukan, user harus menginput update status penghuni.
+
 ![User input perubahan status](assets/soal%203/image-14.png)
 
 Output jika input update terdapat typo atau salah ketik (tidak valid).
+
 ![Invalid input](assets/soal%203/image-15.png)
 
 Output jika berhasil mengupdate status penghuni.
+
 ![Berhasil mengupdate status penghuni](assets/soal%203/image-16.png)
 
 ---
@@ -778,21 +789,27 @@ Pada Sub-opsi 3 (Hapus Cron Job Pengingat), logikanya mirip dengan sub-opsi 2, n
 Contoh Output :
 
 Tampilan User Interface pada opsi 6 (cron management).
+
 ![UI cron management](assets/soal%203/image-19.png)
 
 Output jika belum ada jadwal cron yang dibuat.
+
 ![Cron belom tersedia](assets/soal%203/image-20.png)
 
 Output jika sudah ada jadwal cron yang dibuat.
+
 ![cron tersedia](assets/soal%203/image-21.png)
 
 Output pada sub-opsi 2 (mendaftarkan cron job)
+
 ![daftarkan cronjob](assets/soal%203/image-22.png)
 
 Output jika pada sub-opsi 2 input yang dimasukkan tidak valid.
+
 ![input tidak valid](assets/soal%203/image-23.png)
 
 Output untuk sub-opsi 3 (menghapus cron job pengingat)
+
 ![hapus cron job](assets/soal%203/image-24.png)
 
 ---
@@ -817,4 +834,5 @@ Untuk soal nomor 3 ini banyak bangettt... harus bener bener nguli. lalu juga unt
 
 ---
 DENGAN BEGINI LAPORAN RESMI SISOP MODUL 1 TELAH SELESAI ! ! ! ! ! ! ! !
+
 ![MENGKEREN](assets/soal%203/mengkeren.png)
