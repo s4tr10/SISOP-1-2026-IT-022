@@ -73,12 +73,20 @@ do
                 echo -n "Masukkan Kamar: "
                 read -r kamar
 
-                kamar_ada=$(awk -F ',' -v k="$kamar" '$2 == k {print 1}' "$DB_FILE")
+                # Validasi Lapis 1: Cek apakah input murni angka DAN lebih besar dari 0
+                if [[ "$kamar" =~ ^[0-9]+$ ]] && [ "$kamar" -gt 0 ]; then
+                    
+                    # Validasi Lapis 2: Cek apakah kamar sudah ada di database
+                    kamar_ada=$(awk -F ',' -v k="$kamar" '$2 == k {print 1}' "$DB_FILE")
 
-                if [ "$kamar_ada" == 1 ]; then
-                    echo "[-] Error: Kamar $kamar sudah terisi."
+                    if [ "$kamar_ada" == "1" ]; then
+                        echo "[-] Error: Kamar $kamar sudah terisi."
+                    else
+                        break # Lolos semua validasi, keluar dari loop
+                    fi
+                    
                 else
-                    break
+                    echo "[-] Error: Nomor kamar harus berupa angka positif."
                 fi
             done
 

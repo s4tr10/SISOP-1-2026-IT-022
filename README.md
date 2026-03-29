@@ -850,6 +850,9 @@ else if (opsi == "d"){
 maka output yang sekarang menjadi :
 ![revisi opsi d](assets/soal%201/revisi-d.png)
 
+Untuk **SOAL 3** ditambahkan contraint ```[ "$kamar" -gt 0 ]```pada pilihan opsi tambah penghuni ketika memberi input nomor kamar agar tidak memberi input angka negatif.
+![menambahkan constraint pada opsi nomor kamar](assets/soal%203/revisi-1.png)
+
 ---
 DENGAN BEGINI LAPORAN RESMI SISOP MODUL 1 TELAH SELESAI ! ! ! ! ! ! ! !
 

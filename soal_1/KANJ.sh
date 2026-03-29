@@ -57,7 +57,7 @@ END {
 		print(oldest_name, "adalah penumpang kereta tertua dengan usia", oldest, "tahun.")
 	}	else if (opsi == "d"){
 		average = total_age / count_passenger
-		printf("Rata-rata usia penumpang adalah %.0f tahun\n", average)
+		printf("Rata-rata usia penumpang adalah %d tahun\n", int(average))
 	}	else if (opsi == "e"){
 		print("Jumlah penumpang business class adalah", total_business, "orang")
 	}
