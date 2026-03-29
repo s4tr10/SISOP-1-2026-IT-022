@@ -832,6 +832,24 @@ Jika opsi yang diinput tidak sesuai dengan opsi yang tersedia maka program akan 
 
 Untuk soal nomor 3 ini banyak bangettt... harus bener bener nguli. lalu juga untuk bagian cron job karena belum familiar, jadi perlu bantuan AI banyak banget.
 
+
+## REVISI
+
+Untuk output **SOAL 1** opsi d yaitu menghitung rata-rata. Output yang benar adalah membulatkan rata-rata usia penumpang ke bawah (menjadi 37 bukan 38). maka diubah dalam kode dari :
+```bash
+else if (opsi == "d"){
+	average = total_age / count_passenger
+	printf("Rata-rata usia penumpang adalah %.0f tahun\n", average)
+```
+menjadi menggunakan tipe data integer :
+```bash
+else if (opsi == "d"){
+	average = total_age / count_passenger
+	printf("Rata-rata usia penumpang adalah %d tahun\n", int(average))
+```
+maka output yang sekarang menjadi :
+![revisi opsi d](assets/soal%201/revisi-d.png)
+
 ---
 DENGAN BEGINI LAPORAN RESMI SISOP MODUL 1 TELAH SELESAI ! ! ! ! ! ! ! !
 
